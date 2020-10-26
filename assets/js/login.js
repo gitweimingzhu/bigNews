@@ -39,12 +39,12 @@ $(function () {
   })
 
   // 实现注册功能
-  var baseUrl = 'http://ajax.frontend.itheima.net'
+  // var baseUrl = 'http://ajax.frontend.itheima.net'
   $('.register .myForm').on('submit',function  (e) {
     e.preventDefault()
     $.ajax({
       type: 'POST',
-      url: baseUrl + '/api/reguser',
+      url: '/api/reguser',
       data: $(this).serialize(),
       success: function  (info) {
         var layer = layui.layer;
@@ -61,7 +61,7 @@ $(function () {
     e.preventDefault()
     $.ajax({
       type: 'POST',
-      url: baseUrl + '/api/login',
+      url: '/api/login',
       data: $(this).serialize(),
       success: function  ( info) {
         var layer = layui.layer;
