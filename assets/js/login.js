@@ -67,6 +67,10 @@ $(function () {
         var layer = layui.layer;
         layer.msg(info.message);
         if (info.status === 0) {
+          // console.log(info);
+          // 将token添加到本地浏览器储存
+          localStorage.setItem('token',info.token)
+          // 跳转到首页
           location.href = '../../index.html'
         }
       }

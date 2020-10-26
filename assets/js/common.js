@@ -3,4 +3,13 @@
 $.ajaxPrefilter(function  (options) {
   // console.log(options);
   options.url = 'http://ajax.frontend.itheima.net' + options.url
+  // 统一设置token
+  // 1. 由于$.ajaxPrefilter只要发送请求 就会被执行
+  // 2. 但是登陆和注册的请求是不需要携带token的
+  // 3. 因此需要将登陆和注册的请求排除掉
+  if (options.url.includes('/my')) {
+    options.headers = {
+      Authorization:localStorage.getItem('token')
+    }
+  }
 }) 
