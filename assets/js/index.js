@@ -38,4 +38,17 @@ $(function () {
       }
     },
   })
+  // 实现推出功能
+  $('.logout').on('click',function  ( ) {
+    layer.confirm('确定退出登录?', {icon: 3, title:'提示'}, function(index){
+      //do something
+      // 注意：要删除本地浏览器储存的token
+      localStorage.removeItem('token')
+      // 跳转到login.html页面
+      location.href = '../../login.html'
+      // 隐藏当前弹出层
+      layer.close(index);
+    });
+  })
+
 })
