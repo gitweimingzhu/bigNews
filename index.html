@@ -26,9 +26,9 @@
               个人中心
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="">基本资料</a></dd>
-              <dd><a href="">更换头像</a></dd>
-              <dd><a href="">重置密码</a></dd>
+              <dd><a href="./user/user-info.html" target="main-iframe">基本资料</a></dd>
+              <dd><a href="./user/user-avatar.html" target="main-iframe">更换头像</a></dd>
+              <dd><a href="./user/user-password.html" target="main-iframe">重置密码</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item logout">
@@ -69,18 +69,18 @@
               >
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;">
+                  <a href="./article/article.category.html" target="main-iframe">
                     <i class="layui-icon layui-icon-app"></i>
                     文章类别</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./article/article-list.html" target="main-iframe"
                     ><i class="layui-icon layui-icon-app"></i>文章列表</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./article/article-release.html" target="main-iframe"
                     ><i class="layui-icon layui-icon-app"></i>发表文章</a
                   >
                 </dd>
@@ -93,17 +93,17 @@
               >
               <dl class="layui-nav-child">
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./user/user-info.html" target="main-iframe"
                     ><i class="layui-icon layui-icon-app"></i>基本资料</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./user/user-avatar.html" target="main-iframe"
                     ><i class="layui-icon layui-icon-app"></i>更换头像</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="./user/user-password.html" target="main-iframe"
                     ><i class="layui-icon layui-icon-app"></i>重置密码</a
                   >
                 </dd>
@@ -115,7 +115,8 @@
 
       <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px">内容主体区域</div>
+          <!-- iframe标签结合a标签可以实现一个页中页的效果 -->
+        <iframe src="./home/dashboard.html" name="main-iframe" width="100%"   height="100%" frameborder="0"></iframe>
       </div>
 
       <div class="layui-footer">

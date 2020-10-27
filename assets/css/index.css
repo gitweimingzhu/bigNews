@@ -36,3 +36,6 @@
 .userInfo a {
   color: #fff;
 }
+.layui-layout-admin .layui-body {
+  overflow: hidden;
+}
