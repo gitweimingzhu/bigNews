@@ -39,3 +39,6 @@
 .layui-layout-admin .layui-body {
   overflow: hidden;
 }
+iframe {
+  background-color: #eee;
+}
