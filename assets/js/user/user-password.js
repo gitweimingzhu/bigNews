@@ -18,5 +18,17 @@ $(function () {
   // 重置密码
   $('.myForm').on('submit', function (e) {
     e.preventDefault()
+    $.ajax({
+      type: 'POST',
+      url: '/my/updatepwd',
+      data: $(this).serialize(),
+      success: function  (info) {
+        var layer =layui.layer
+        layer.msg(info.message)
+        if (info.status !== 0) {
+          $('.myForm').get(0).reset()
+        }
+      }
+    })
   })
 })
