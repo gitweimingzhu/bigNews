@@ -16,13 +16,13 @@ $(function () {
           if (info.data.user_pic) {
             $('.userInfo .layui-nav-img')
               .show()
-              .attr('scr', info.data.user - pic)
+              .attr('src', info.data.user_pic)
               .prev()
               .hide()
             $('.layui-header .layui-nav-img')
               .show()
-              .attr('src', res.data.user_pic)
-              .prev.hide()
+              .attr('src', info.data.user_pic)
+              .prev().hide()
           } else if (info.data.nickname) {
             $('.userInfo .text-avatar').text(
               info.data.nickname.slice(0, 1).toUpperCase()
