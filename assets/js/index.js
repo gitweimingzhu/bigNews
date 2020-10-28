@@ -38,7 +38,7 @@ $(function () {
       }
     },
   })
-  // 实现推出功能
+  // 实现退出功能
   $('.logout').on('click',function  ( ) {
     layer.confirm('确定退出登录?', {icon: 3, title:'提示'}, function(index){
       //do something
