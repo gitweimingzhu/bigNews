@@ -33,7 +33,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <!-- <tr>
               <td>历史</td>
               <td>人文</td>
               <td>
@@ -47,7 +47,7 @@
                   删除
                 </button>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -60,39 +60,98 @@
           <td>{{value.name}}</td>
           <td>{{value.alias}}</td>
           <td>
-            <button type="button" data-id="{{value.Id}}" class="layui-btn  layui-btn-xs">编辑</button>
-            <button type="button" data-id="{{value.Id}}" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+            <button type="button" data-id="{{value.Id}}" class="layui-btn  layui-btn-xs btn-edit">编辑</button>
+            <button type="button" data-id="{{value.Id}}" class="layui-btn layui-btn-danger layui-btn-xs btn-del">删除</button>
           </td>
         </tr>
       {{/each}}
     </script>
 
-     <!-- 添加分类之弹出层的表单布局 -->
-  <script type="text/html" id="addCteTmp">
-    <form class="layui-form  myForm">
-      <div class="layui-form-item">
-        <label class="layui-form-label">分类名称:</label>
-        <div class="layui-input-block">
-          <input type="text" name="name" required lay-verify="required|username" placeholder="请输入分类名称" autocomplete="off"
-            class="layui-input">
+    <!-- 添加分类之弹出层的表单布局 -->
+    <script type="text/html" id="addCteTmp">
+      <form class="layui-form  myForm">
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类名称:</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="name"
+              required
+              lay-verify="required|username"
+              placeholder="请输入分类名称"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
         </div>
-      </div>
-      <div class="layui-form-item">
-        <label class="layui-form-label">分类别名:</label>
-        <div class="layui-input-block">
-          <input type="text" name="alias" required lay-verify="required|username" placeholder="请输入分类别名" autocomplete="off"
-            class="layui-input">
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类别名:</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="alias"
+              required
+              lay-verify="required|username"
+              placeholder="请输入分类别名"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
         </div>
-      </div>
-      <div class="layui-form-item">
-        <div class="layui-input-block">
-          <button class="layui-btn" lay-submit lay-filter="formDemo">确认添加</button>
-          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">
+              确认添加
+            </button>
+            <button type="reset" class="layui-btn layui-btn-primary">
+              重置
+            </button>
+          </div>
         </div>
-      </div>
-    </form>
-  </script>
-  
+      </form>
+    </script>
+
+    <!-- 编辑分类之弹出层的表单布局 -->
+    <script type="text/html" id="editCteTmp">
+      <form class="layui-form  editForm" lay-filter="formTest">
+        <input type="hidden" name="Id">
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类名称:</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="name"
+              required
+              lay-verify="required|username"
+              placeholder="请输入分类名称"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">分类别名:</label>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="alias"
+              required
+              lay-verify="required|username"
+              placeholder="请输入分类别名"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">
+              确认修改
+            </button>
+          </div>
+        </div>
+      </form>
+    </script>
 
     <script src="../assets/lib/layui/layui.all.js"></script>
     <script src="../assets/lib/jquery.js"></script>
