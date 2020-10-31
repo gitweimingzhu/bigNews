@@ -50,7 +50,7 @@ $(function () {
   })
 
   // 实现分布样式
-   function renderPage (info) {
+  function renderPage(info) {
     var laypage = layui.laypage
     //执行一个laypage实例
     laypage.render({
@@ -62,8 +62,8 @@ $(function () {
       layout: ['count', 'limit', 'prev', 'page', 'next', 'skip', 'first'],
       jump: function (obj, first) {
         //obj包含了当前分页的所有参数，比如：
-        console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-        console.log(obj.limit); //得到每页显示的条数
+        console.log(obj.curr) //得到当前页，以便向服务端请求对应页的数据。
+        console.log(obj.limit) //得到每页显示的条数
 
         //首次不执行
         if (!first) {
@@ -76,4 +76,24 @@ $(function () {
       },
     })
   }
+
+  // 给删除按钮注册委托事件
+  $('tbody').on('click', '.btn-del', function () {
+    // 获取当前按钮的id
+    var id = $(this).data('id')
+    // 弹出提示框
+    layer.confirm('确认删除?', { icon: 3, title: '提示' }, function (index) {
+      //do something
+      $.ajax({
+        url: '/my/article/delete/' + id,
+        success: function (info) {
+          layer.msg(info.message)
+          if (info.status === 0) {
+            renderList()
+          }
+        },
+      })
+      layer.close(index)
+    })
+  })
 })
