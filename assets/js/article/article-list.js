@@ -104,4 +104,10 @@ $(function () {
       layer.close(index)
     })
   })
+
+  // 给编辑按钮注册委托事件
+  $('tbody').on('click','.btn-edit',function  ( ) {
+    var id = $(this).data('id')
+    location.href = '../../../article/article-edit.html?id='+ id
+  })
 })
