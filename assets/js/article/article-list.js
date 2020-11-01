@@ -14,6 +14,7 @@ $(function () {
     },
   })
 
+  // 优化筛选和列表数据的渲染
   // 准备发送给服务器的参数
   var params = {
     pagenum: 1,
@@ -79,6 +80,8 @@ $(function () {
 
   // 给删除按钮注册委托事件
   $('tbody').on('click', '.btn-del', function () {
+    // 判断当前页中文章的数量
+    var count = $('tbody .btn-del').length
     // 获取当前按钮的id
     var id = $(this).data('id')
     // 弹出提示框
@@ -89,6 +92,11 @@ $(function () {
         success: function (info) {
           layer.msg(info.message)
           if (info.status === 0) {
+            // 删除文章功能的优化
+            // 当将最后一页的最后一条数据删除了的时候，此时会有一个bug，就是还停留在最后一页的数据
+            if (count === 1) {
+              params.pagenum = params.pagenum === 1 ? 1 : params.pagenum - 1
+            }
             renderList()
           }
         },

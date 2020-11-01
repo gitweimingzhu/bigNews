@@ -1,0 +1,22 @@
+.layui-card {
+  margin: 16px;
+}
+.box {
+  display: flex;
+}
+.cropper-box {
+  width: 400px;
+  height: 280px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.img-preview {
+  width: 200px;
+  height: 140px;
+  background-color: gray;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.preview-box div:nth-child(2) {
+  padding-left: 60px;
+} 
